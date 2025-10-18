@@ -26,7 +26,7 @@ function createGrid() {
             cell.dataset.col = c;
 
             // Добавляем обработчик клика для интерактивности
-            cell.addEventListener('click', handleCellClick);
+            // cell.addEventListener('click', handleCellClick);
 
             gridContainer.appendChild(cell);
         }
@@ -37,6 +37,10 @@ function createGrid() {
 function handleCellClick(event) {
     const cell = event.target;
 
+    //  Фильтр делегирования, НОВАЯ СТРОКА
+    if (!cell.classList.contains('cell')) {
+        return;
+    }
     // Получаем координаты из data-атрибутов
     const r = cell.dataset.row;
     const c = cell.dataset.col;
@@ -53,6 +57,9 @@ function handleCellClick(event) {
 
     }
 }
+// Добавляем глобальный обработчик кликов на контейнер сетки
+gridContainer.addEventListener('click', handleCellClick);
+
     // DEBUG: Можно вывести aliveCells, чтобы проверить, что логика работает
     console.log(aliveCells);
 

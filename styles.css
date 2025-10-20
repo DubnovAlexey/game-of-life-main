@@ -10,7 +10,8 @@ body {
     background: #ccc;
     border: 1px solid #bbb;
     width: fit-content;
-    grid-template-columns: repeat(30, 20px);
+    /*grid-template-columns: repeat(30, 20px);*/
+    /*grid-template-columns: repeat(3, 20px);*/
     /*grid-template-rows: repeat(3, 20px);*/
 }
 

@@ -1,7 +1,11 @@
 // Размеры игрового поля
 const ROWS = 20;// Количество строк
 const COLS = 30;// Количество столбцов
+// const СELL_SIZE = 20; // Размер клетки в пикселях
 
+// // Ссылка на элемент сетки
+// grid.style.display = "grid";
+// grid.style.gridTemplateColumns = `repeat(${COLS}, ${СELL_SIZE}px)`;
 // Ссылка на контейнер сетки из index.html
 const gridContainer = document.getElementById('grid');
 

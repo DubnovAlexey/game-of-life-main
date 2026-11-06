@@ -128,6 +128,7 @@ function clearField() {
 
 // Обрабатывает нажатие на клетку: переключает её и запоминает, что рисовать протягиванием.
 function handleCellPress(event) {
+    if (event.button !== 0 || event.isPrimary === false) return;
     const cell = event.target;
 
     // Фильтр делегирования: реагируем только на клетки
@@ -160,6 +161,9 @@ function paintCell(key) {
 gridContainer.addEventListener('pointerdown', handleCellPress);
 gridContainer.addEventListener('pointermove', handleCellEnter);
 document.addEventListener('pointerup', () => { isPainting = false; });
+// Отмена касания или уход из окна прекращают рисование до следующего нажатия.
+document.addEventListener('pointercancel', () => { isPainting = false; });
+window.addEventListener('blur', () => { isPainting = false; });
 
 document.getElementById('start').addEventListener('click', () => (timerId === null ? start() : stop()));
 document.getElementById('step').addEventListener('click', () => { stop(); step(); });

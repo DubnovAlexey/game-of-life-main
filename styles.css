@@ -62,3 +62,22 @@ h1 {
 .cell.alive {
     background: #4de6a9; /* цвет "живой" клетки */
 }
+
+/* Source code link — under the field, in the green of the live cells */
+.source-link {
+    margin: 1.2rem 0 2rem;
+    text-align: center;
+}
+
+.source-link a {
+    color: #2c9a6f;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid #4de6a9;
+}
+
+.source-link a:hover,
+.source-link a:focus-visible {
+    color: #1d6b4c;
+    outline: none;
+}

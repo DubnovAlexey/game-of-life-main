@@ -51,7 +51,7 @@ Open `index.html` in a browser.
 
 These are proposals, not currently implemented features.
 
-- Visual: add a small pattern palette, clearer live-cell states and a glider favicon.
+- Visual: add a small pattern palette and clearer live-cell states.
 - Engineering: extract the pure rules into a directly testable module and add permanent toroidal-edge/pointer-cancel checks; measure before changing the renderer.
 - Functionality: add selectable glider/pulsar patterns and import/export of a pattern.
 
@@ -108,7 +108,7 @@ HTML5 · CSS Grid · JavaScript (DOM, `Set`, `Map`, Pointer Events) · GitHub Pa
 
 Это предложения, а не уже реализованные возможности.
 
-- Визуал: добавить небольшую палитру узоров, яснее выделить живые клетки и favicon планера.
+- Визуал: добавить небольшую палитру узоров и яснее выделить живые клетки.
 - Инженерия: вынести чистые правила в непосредственно тестируемый модуль, закрепить проверки тороидального края и отмены рисования; смену рендерера обосновывать замерами.
 - Функции: выбор планера/пульсара и импорт/экспорт узора.
 
@@ -160,7 +160,7 @@ HTML5 · CSS Grid · JavaScript (DOM, `Set`, `Map`, Pointer Events) · GitHub Pa
 
 אלה הצעות, לא יכולות שכבר מומשו.
 
-- חזות: פלטת דפוסים קטנה, הבחנה ברורה יותר בתאים חיים וסמל רחפן.
+- חזות: פלטת דפוסים קטנה והבחנה ברורה יותר בתאים חיים.
 - הנדסה: חילוץ החוקים למודול הניתן לבדיקה, בדיקות קצה טורואידלי וביטול ציור; החלפת מנוע רק לאחר מדידה.
 - יכולות: בחירת רחפן ופולסר, וייבוא/ייצוא של דפוס.
 

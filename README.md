@@ -1,6 +1,8 @@
+<!--suppress MarkdownUnresolvedFileReference -->
+
 # Game of Life
 
-[English](#english) · [Русский](#russian) · [עברית](#hebrew)
+[English](#english) · [Русский](#russian) · [עברית](#hebrew) · [Español](#spanish) · [Français](#french)
 
 <a name="english"></a>
 
@@ -165,3 +167,117 @@ HTML5 · CSS Grid · JavaScript (DOM, `Set`, `Map`, Pointer Events) · GitHub Pa
 - יכולות: בחירת רחפן ופולסר, וייבוא/ייצוא של דפוס.
 
 </div>
+
+---
+
+<a name="spanish"></a>
+
+## Español
+
+**El juego de la vida**
+
+El «Juego de la vida» de Conway en el navegador: dibuje un patrón en un tablero de 30 × 20 y vea cómo vive según las reglas de Conway.
+
+**Demo:** https://dubnovalexey.github.io/game-of-life-main/
+
+### Recorrido rápido
+
+Dibuje una línea de tres celdas y pulse Step para verla girar. Compare Random con Start/Pause, cambie Speed y limpie el tablero con Clear.
+
+Mire `nextGeneration()` y `render()` en `main.js`: las reglas trabajan con Set/Map por separado de la actualización del DOM. Ahora el tablero tiene 600 celdas; otro motor de dibujo para una rejilla grande queda como opción de desarrollo.
+
+Los enlaces de idioma de arriba cambian la documentación; no traducen la interfaz de la demo.
+
+### Funciones
+
+- Un clic da vida a una celda. También se puede dibujar arrastrando el ratón o el dedo por el tablero.
+- **Start / Pause**, **Step** (una generación), **Random** (vive una de cada cuatro celdas), **Clear** y el control deslizante **Speed**.
+- Contadores de generación y de celdas vivas. Si todo muere, la simulación se detiene sola.
+- El tablero es cerrado: un planeador que sale por la derecha aparece por la izquierda.
+- Cabe en la pantalla de un móvil: el tamaño de la celda depende del ancho de la pantalla.
+
+### Cómo está hecho
+
+- Las celdas vivas se guardan en un `Set` con claves `"fila_columna"`.
+- `nextGeneration(alive)` es una función pura. Cuenta vecinos solo alrededor de las celdas vivas (contadores en un `Map`) y aplica las reglas: una celda muerta con tres vecinas nace; una viva con dos o tres sobrevive.
+- Solo se vuelven a dibujar las celdas que cambian.
+- Un único manejador para todo el tablero (delegación de eventos) en lugar de 600 separados.
+
+### Tecnologías
+
+HTML5 · CSS Grid · JavaScript (DOM, `Set`, `Map`, Pointer Events) · GitHub Pages
+
+### Lo que aprendí
+
+- Construir una rejilla a partir de datos en lugar de escribir cientos de `div` a mano.
+- Separar las reglas (función pura) del dibujo.
+- Elegir estructuras de datos por velocidad: `Set` para las celdas vivas, `Map` para contar vecinos.
+
+### Cómo ejecutarlo
+
+Abra `index.html` en el navegador.
+
+### Plan de desarrollo
+
+Son propuestas, no funciones ya implementadas.
+
+- Visual: añadir una pequeña paleta de patrones y resaltar mejor las celdas vivas.
+- Ingeniería: llevar las reglas puras a un módulo que se pueda probar directamente, fijar pruebas del borde toroidal y de la cancelación del dibujo; justificar cualquier cambio de motor de dibujo con mediciones.
+- Funciones: elegir planeador/púlsar e importar/exportar patrones.
+
+---
+
+<a name="french"></a>
+
+## Français
+
+**Le jeu de la vie**
+
+Le « Jeu de la vie » de Conway dans le navigateur : dessinez un motif sur une grille de 30 × 20 et regardez-le vivre selon les règles de Conway.
+
+**Démo :** https://dubnovalexey.github.io/game-of-life-main/
+
+### Visite rapide
+
+Dessinez une ligne de trois cellules et appuyez sur Step pour la voir pivoter. Comparez Random et Start/Pause, changez Speed et videz la grille avec Clear.
+
+Regardez `nextGeneration()` et `render()` dans `main.js` : les règles travaillent avec Set/Map, séparément de la mise à jour du DOM. La grille compte aujourd'hui 600 cellules ; un autre moteur de rendu pour une grande grille reste une piste d'évolution.
+
+Les liens de langue ci-dessus changent la documentation ; ils ne traduisent pas l'interface de la démo.
+
+### Fonctions
+
+- Un clic donne vie à une cellule. On peut aussi dessiner en glissant la souris ou le doigt sur la grille.
+- **Start / Pause**, **Step** (une génération), **Random** (une cellule sur quatre vivante), **Clear** et le curseur **Speed**.
+- Compteurs de génération et de cellules vivantes. Si tout meurt, la simulation s'arrête d'elle-même.
+- La grille est refermée sur elle-même : un planeur qui sort à droite réapparaît à gauche.
+- Tient sur un écran de téléphone : la taille de la cellule dépend de la largeur de l'écran.
+
+### Comment c'est fait
+
+- Les cellules vivantes sont stockées dans un `Set` avec des clés `"ligne_colonne"`.
+- `nextGeneration(alive)` est une fonction pure. Elle ne compte les voisins qu'autour des cellules vivantes (compteurs dans une `Map`) et applique les règles : une cellule morte avec trois voisines naît, une vivante avec deux ou trois survit.
+- Seules les cellules qui changent sont redessinées.
+- Un seul gestionnaire pour toute la grille (délégation d'événements) au lieu de 600 séparés.
+
+### Technologies
+
+HTML5 · CSS Grid · JavaScript (DOM, `Set`, `Map`, Pointer Events) · GitHub Pages
+
+### Ce que j'ai appris
+
+- Construire une grille à partir des données au lieu d'écrire des centaines de `div` à la main.
+- Séparer les règles (fonction pure) du dessin.
+- Choisir les structures de données pour la vitesse : `Set` pour les cellules vivantes, `Map` pour compter les voisins.
+
+### Lancer le projet
+
+Ouvrez `index.html` dans le navigateur.
+
+### Pistes d'évolution
+
+Ce sont des propositions, pas des fonctions déjà réalisées.
+
+- Visuel : ajouter une petite palette de motifs et mieux faire ressortir les cellules vivantes.
+- Ingénierie : sortir les règles pures dans un module testable directement, fixer des tests du bord torique et de l'annulation du dessin ; justifier tout changement de moteur de rendu par des mesures.
+- Fonctions : choix planeur/pulsar et import/export de motifs.
